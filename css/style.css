@@ -1,0 +1,67 @@
+/* ### Imports ### */
+@font-face{
+    font-family: opensans-bold;
+    src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face{
+    font-family: opensans-semibold;
+    src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+@font-face{
+    font-family: opensans;
+    src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face{
+    font-family: opensans-light;
+    src: url(../fonts/OpenSans-Light.ttf);
+}
+
+/* ### GERAL ### */
+body{
+    margin: 0;
+}
+
+/* ### Pagina Inicial ### */
+.container_background{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../imagens/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.container_background > h2{
+    color: #fff;
+    font-family: opensans-bold;
+    font-size: 44px;
+    margin-bottom: 0;
+}
+.container_background > p{
+    color: #fff;
+    font-family: opensans;
+    font-size: 20px;
+    margin-top: 0px;
+}
+.container_background > h3{
+    font-family: opensans-semibold;
+    color: #fff;
+    font-size: 22px;
+}
