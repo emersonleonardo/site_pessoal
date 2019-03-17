@@ -18,18 +18,144 @@
 
 /* ### GERAL ### */
 body{
+    height: 100%;
+    width: 100%;
     margin: 0;
+    padding: 0;
+    background-color: #393e46;
+}
+main{
+    width: calc(100% - 45px);
+    height: 100%;
+    margin-left: 45px;
+    /* background-color: #2b3538; */
+    /* background-color: #393e46; */
+}
+/*.bloco{    
+    min-height: 100vh;
+}*/
+p, a, span, td{
+    font-family: opensans;
+}
+img{
+    max-width: 100%;
+}
+section.bloco > section{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 7%;
 }
 
-/* ### Pagina Inicial ### */
-.container_background{
+/* ### HEADER ### */
+.header{
+    background-color: #222831;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 100%;
-    background-image: url(../imagens/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
+    position: fixed;
+    justify-content: space-between;
+    width: 45px;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.header section nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;    
+}
+.header .perfil .logo-menu{
     text-align: center;
+    color: #fff;
+    font-size: 16px;
+    padding: 13px;
+    background-color: #191d23;
+    font-family: opensans;
+}
+.header .links-menu nav ul{
+    font-size: 22px;
+}
+.header .links-menu nav ul > li{
+    padding: 10px 0px;
+}
+.header section nav ul > li:hover{
+    background-color: #0092ca;
+}
+.header section nav ul > li > a{
+    color: #eeeeee;
+    padding: 10px;
+}
+.header section nav ul > li > a > svg{
+    width: 25px !important;
+}
+.header section nav ul > li .tooltip{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 1px;
+    font-size: 16px;
+    background-color: #eeeeeed6;
+    color: #393e46;
+    padding: 5px 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+.header section nav ul > li .tooltip::after{
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 0;
+    margin-left: -10.5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #eeeeeed6 transparent transparent transparent;
+    transform: rotate(90deg);
+}
+.header section nav ul > li:hover > .tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.header .footer-menu{
+    margin-bottom: 10px;
+}
+.header .footer-menu nav ul{
+    font-size: 20px;
+}
+.header .footer-menu nav ul li{
+    padding: 3px 0;
+}
+.header .footer-menu nav ul > li > a{
+    padding: 3px 12px;
+}
+.header .footer-menu nav ul > li > a > svg{
+    width: 21px !important;
+}
+
+.bloco > header{
+    text-align: center;
+    margin-top: 4%;
+    color: #fff;
+    margin-bottom: 3%;
+}
+.bloco > header > h2{
+    font-family: opensans;
+    font-size: 30px;
+    margin-bottom: 5px;
+    padding-top: 15px;
+}
+.bloco > header > span{
+    font-size: 14px;
+    color: #a5a7ab;
+}
+
+
+/* Bloco Inicial */
+#inicio{
+    width: 100%;
+    overflow: hidden;
+}
+.bloco_inicio{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -47,21 +173,140 @@ body{
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
 }
-.container_background > h2{
+.bloco_inicio > header{
+    position: absolute;
+    z-index: 30;
+    margin: 0;
+}
+.bloco_inicio > header h2{
     color: #fff;
     font-family: opensans-bold;
     font-size: 44px;
     margin-bottom: 0;
 }
-.container_background > p{
+.bloco_inicio > header p{
     color: #fff;
     font-family: opensans;
     font-size: 20px;
     margin-top: 0px;
 }
-.container_background > h3{
-    font-family: opensans-semibold;
+
+/* Bloco Portfolio */
+
+.bloco_portfolio .elemento_portfolio{
+    width: calc(25% - 20px);
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+.bloco_portfolio .elemento_portfolio > .thumb{
+    height: 200px;
+    background-size: cover;
+    transition: 4s;
+    background-position: top center;
+}
+.bloco_portfolio .elemento_portfolio > .thumb:hover{
+    background-position: bottom center;
+}
+.bloco_portfolio .elemento_portfolio > .info{
+    padding: 5px 15px;
+}
+.bloco_portfolio .elemento_portfolio > .info .titulo_site h1{
+    margin: 5px 0;
+}
+.bloco_portfolio .elemento_portfolio > .info .titulo_site h1 > a{
+    color: #393e46;
+    text-decoration: none;
+    font-family: opensans;
+}
+
+@media screen and (max-width: 1000px){
+    .bloco_portfolio .elemento_portfolio{
+        width: calc(33.33% - 20px);
+    }
+}
+@media screen and (max-width: 750px){
+    .bloco_portfolio .elemento_portfolio{
+        width: calc(50% - 20px);
+    }
+}
+@media screen and (max-width: 550px){
+    .bloco_portfolio .elemento_portfolio{
+        width: 100%;
+    }
+}
+
+/* Bloco conhecimento */
+
+#conhecimento > section > div{
+    width: calc(15% - 20px);
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/* Bloco Sobre */
+
+section.bloco > section > p{
     color: #fff;
-    font-size: 22px;
+}
+
+/* ### FOOTER ### */
+
+footer .footer-menu{
+    display: none;
+}
+
+
+/* Mobile */
+@media screen and (max-width: 450px){
+    header.header{
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        z-index: 9999999;
+    }
+    .header .perfil{
+        width: 50px;
+    }
+    .header .links-menu{
+        width: calc(100% - 50px);
+    }
+    .header .links-menu > nav > ul{
+        display: flex;
+    }
+    .header .links-menu > nav > ul > li{
+        width: 25%;
+    }
+    .header .footer-menu{
+        display: none;
+    }
+    .container{
+        width: 100%;
+        margin-left: 0;
+    }
+    footer{
+        background-color: #222831;
+        margin-top: 10%;
+    }
+    footer .footer-menu{
+        display: block;
+    }
+    footer .footer-menu ul{
+        margin: 0;
+        list-style: none;
+        display: flex;
+        padding: 2% 5%;
+        justify-content: space-evenly;
+    }
+    footer .footer-menu ul > li > a{
+        color: #fff;
+        font-size: 22px;
+    }
 }
