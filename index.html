@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="imagens/favicon_el.png" type="image/x-icon">
         <title>Emerson Leonardo</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js"></script>
@@ -20,7 +21,7 @@
                             <a href="#inicio" title="Home">
                                 <i class="fas fa-home"></i>
                             </a>
-                            <span class="tooltip">Inicio</span>
+                            <span class="tooltip">Início</span>
                         </li>
                         <li>
                             <a href="#sobre" title="Sobre">
@@ -32,7 +33,7 @@
                             <a href="#portfolio" title="Portfolio">
                                 <i class="fas fa-eye"></i>
                             </a>
-                            <span class="tooltip">Portfolio</span>
+                            <span class="tooltip">Portfólio</span>
                         </li>
                         <li>
                             <a href="#conhecimento" title="Conhecimento">
@@ -84,7 +85,7 @@
                 </header>
                 <section>
                     <p>Oi, meu nome é Emerson Leonardo, nasci na baixada santista e atualmente sou Front-end Jr em uma agência de marketing digital em São Paulo.</p>
-                    <p>Me formei em Analise e Desenvolvimento de Sistemas em 2017 no Centro Universitário Monte Serrat – UNIMONTE, atualmente conhecida como Centro Universitário São Judas Tadeu – Campus Unimonte.</p>
+                    <p>Me formei em Análise e Desenvolvimento de Sistemas em 2017 no Centro Universitário Monte Serrat – UNIMONTE, atualmente conhecida como Centro Universitário São Judas Tadeu – Campus Unimonte.</p>
                     <p>Sempre gostei da área de criação então resolvi ir para a área de desenvolvimento. Hoje, além dos meus estudos em programação também estudo UX/UI para acrescentar meus conhecimentos na área.</p>
                 </section>
             </section>
@@ -92,9 +93,9 @@
             <!-- ### PORTFOLIO ### -->
             <section id="portfolio" class="bloco container_portfolio">
                 <header>
-                    <h2>Projetos</h2>
-                    <span>Nota: Todos os projetos foram desenvolvido apenas o codigo</span><br>
-                    <span>Design feito a parte</span>
+                    <h2>Portfólio</h2>
+                    <span>Nota: Todos os projetos foram desenvolvido apenas o código.</span><br>
+                    <span>Design feito a parte.</span>
                 </header>
                 <section id="bloco_portfolio" class="bloco_portfolio"></section>                
             </section>
@@ -250,15 +251,35 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             /* Scroll suave */
-            $('.nav a[href^="#"]').on('click', function(e) {
-            e.preventDefault();
-            var id = $(this).attr('href'),
-            targetOffset = $(id).offset().top;
-                
-            $('html, body').animate({ 
-                scrollTop: targetOffset
-            }, 500);
-            });
+            
+
+            function myFunction(x) {
+                if (x.matches) { // If media query matches
+                    $('.nav a[href^="#"]').on('click', function(e) {
+                    e.preventDefault();
+                    var id = $(this).attr('href'),
+                    targetOffset = $(id).offset().top;
+                        
+                    $('html, body').animate({ 
+                        scrollTop: targetOffset - 50
+                    }, 500);
+                    });
+                } else {
+                    $('.nav a[href^="#"]').on('click', function(e) {
+                    e.preventDefault();
+                    var id = $(this).attr('href'),
+                    targetOffset = $(id).offset().top;
+                        
+                    $('html, body').animate({ 
+                        scrollTop: targetOffset
+                    }, 500);
+                    });
+                }
+            }
+
+            var x = window.matchMedia("(max-width: 450px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
         </script>
     </body>
 </html>
